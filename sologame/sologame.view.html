@@ -3,6 +3,8 @@
 
 	<h2>Apprendre a {|vm.title.id|}</h2>
 
+	<button ng-click="vm.retour()" class="btn btn-warning" type="button"> Retour</button>
+	<hr>
 
 	<div class="panel panel-default">
 		<div class="panel-heading"><h4>Question:</h4><h5>{|vm.game.question|}</h5></div>
@@ -15,29 +17,42 @@
 
 	<div class="panel panel-default">
 		<div class="panel-heading"><h5>Répondre</h5></div>
-		<label for="select" class="col-lg-2 control-label">Choisir</label>
-		<div class="col-lg-10">
+		<div class="panel-body">
 
-			<select class="form-control" id="select" ng-model="save">
-				<option ng-repeat="(i, row) in vm.game.proposition track by $index">{|row|}</option>
-			</select>
+		<div ng-show="vm.level == 1 && vm.ok == false">
+			<label for="select" class="col-lg-2 control-label">Choisir</label>
+			<div class="col-lg-10">
+				<select class="form-control" id="select" ng-model="vm.save">
+					<option ng-repeat="(i, row) in vm.game.proposition track by $index">{|row|}</option>
+				</select>
+			</div>
 		</div>
 
-		</br>
+		<form ng-submit="vm.repondre(vm.game, vm.save)" ng-show="vm.level == 2 && vm.ok == false">
+			<label for="select" class="col-lg-2 control-label">Ecrire la réponse: </label>
+			<input type="text" ng-model="vm.save" name="output"  />
+		</form>
 
-		<div class="form-group">
+		<hr ng-show="vm.ok == false">
+
+		<div class="form-group" ng-hide="vm.ok">
 			<div class="col-lg-10 col-lg-offset-1">
-				<button type="submit" ng-disabled="vm.disable" ng-click="vm.repondre(vm.game, save)" class="btn btn-primary">Répondre</button>
+				<button type="submit"  ng-disabled="vm.disable" ng-click="vm.repondre(vm.game, vm.save)" class="btn btn-primary">Répondre</button>
 			</div>
 
-			</br>
 		</div>
 
 		<div ng-show="vm.ok == true">
 			<div class="alert alert-dismissible alert-success">
 				&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<strong>{|vm.info|}</strong> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-				<button ng-click="vm.new()" class="btn btn-default" type="button">Suivant</button>
+				<button ng-click="vm.new()" class="btn btn-primary" type="button">Suivant</button>
 			</div>
+			<div class="row">
+				<div class="col-md-2 col-md-offset-1">
+					<iframe src="https://giphy.com/embed/26DOoDwdNGKAg6UKI" width="480" height="384" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/alexanderirl-alexander-irl-26DOoDwdNGKAg6UKI"></a></p>
+				</div>
+			</div>
+
 		</div>
 
 		<div ng-show="vm.ko == true">
@@ -46,6 +61,7 @@
 			</div>
 		</div>
 
+	</div>
 	</div>
 
 </div>

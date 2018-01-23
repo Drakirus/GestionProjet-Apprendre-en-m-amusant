@@ -14,6 +14,8 @@
     // reset login status
     UserService.ClearCredentials();
 
+		vm.diff = "1"
+
     function login() {
       vm.dataLoading = true;
       UserService.Login(vm.username, vm.password, function (response) {

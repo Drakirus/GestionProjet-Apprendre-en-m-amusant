@@ -29,6 +29,8 @@
 
 		vm.title = gameOption
 
+		vm.level = gameOption['diff']
+
     // init the ctrl
    initCtrl();
 
@@ -76,7 +78,7 @@
 						"url_image": "http://localhost:8080/img/lire3.jpg",
 						"response": "bleu",
 						"proposition": ["rouge","bleu","verte","orange"],
-						"question": "Combien il y a de ballon ?",
+						"question": "Quelle est la couleur du pantalon ?",
 						"text": ""
 					}
 				],
@@ -90,8 +92,8 @@
 					}
 					,{
 						"url_image": "http://localhost:8080/img/ecrire2.jpg",
-						"response": "brosse les dents",
-						"proposition": ["coiffe les cheveux","cache les yeux","brosse les dents"],
+						"response": "brosse dents",
+						"proposition": ["coiffe cheveux","cache yeux","brosse dents"],
 						"question": "Observe l’image et complète la phrase.",
 						"text": "Elle se _____ les _____ ."
 					},
@@ -123,6 +125,7 @@
 			if (question['response'] == reponse){
 				vm.ok = true;
 				vm.info = "Bonne reponse"
+				vm.save = ""
 			} else {
 				vm.ko = true;
 				vm.info = "Mauvaise reponse"
@@ -140,6 +143,11 @@
 		vm.ok = false;
 		vm.ko = false;
 
+		}
+
+		vm.retour = retour;
+		function retour(){
+			$location.path("/");
 		}
 
 
