@@ -1,0 +1,22 @@
+{
+	"ecrire" : [
+	{
+	  "url_image": "http://localhost:8080/img/ecrire1.jpg",
+	  "response": "boit",
+	  "proposition": ["boit","mange","joue","dessine"],
+	  "question": "Observe l’image et complète la phrase."
+	}
+	,{
+	  "url_image": "http://localhost:8080/img/ecrire2.jpg",
+	  "response": "brosse les dents",
+	  "proposition": ["coiffe les cheveux","cache les yeux","brosse les dents"],
+	  "question": "Observe l’image et complète la phrase."
+	},
+	{
+	  "url_image": "http://localhost:8080/img/ecrire3.jpg",
+	  "response": "peigne",
+	  "proposition": ["cache","plaint","peigne","perd"],
+	  "question": "Observe l’image et complète la phrase."
+	}
+	]
+}
