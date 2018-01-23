@@ -17,6 +17,9 @@
 
     var vm = this;
 
+		console.log($route.current.params);
+		var gameOption = $route.current.params
+
     var newGame;
 		// var image = "https://www.theyearinpictures.co.uk/images//image-placeholder.png";
 
@@ -48,9 +51,29 @@
 						"proposition": [7,6,3,5],
 						"question": "Combien il y a de ballon ?"
 					}
+				],
+				"lire" : [
+					{
+						"url_image": "http://localhost:8080/img/lire1.jpg",
+						"response": "rouge",
+						"proposition": ["rouge","bleu","verte","orange"],
+						"question": "Quelle est la couleur du ballon ?"
+					}
+					,{
+						"url_image": "http://localhost:8080/img/lire2.jpg",
+						"response": "verte",
+						"proposition": ["rouge","bleu","verte","orange"],
+						"question": "Quelle est la couleur de la pomme ?"
+					},
+					{
+						"url_image": "http://localhost:8080/img/lire3.jpg",
+						"response": "bleu",
+						"proposition": ["rouge","bleu","verte","orange"],
+						"question": "Combien il y a de ballon ?"
+					}
 				]
 			}
-			var rand = newGame["calcul"][Math.floor(Math.random() * newGame["calcul"].length)];
+			var rand = newGame[gameOption['id']][Math.floor(Math.random() * newGame[gameOption['id']].length)];
 
 			vm.game = rand
 		}
@@ -77,9 +100,9 @@
 
 		function newq() {
 
-			var randnest = newGame["calcul"][Math.floor(Math.random() * newGame["calcul"].length)];
+			var randnest = newGame[gameOption['id']][Math.floor(Math.random() * newGame[gameOption['id']].length)];
 			while(randnest == vm.game){
-				randnest = newGame["calcul"][Math.floor(Math.random() * newGame["calcul"].length)];
+				randnest = newGame[gameOption['id']][Math.floor(Math.random() * newGame[gameOption['id']].length)];
 			}
 			vm.game = randnest
 

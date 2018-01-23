@@ -16,12 +16,11 @@
         controllerAs: 'vm'
       })
 
-      .when('/compter', {
+      .when('/play', {
         controller: 'SoloGameController',
         templateUrl: 'sologame/sologame.view.html',
         controllerAs: 'vm'
       })
-
 
       .otherwise({ redirectTo: '/login' });
 
@@ -62,3 +61,4 @@
   } //end run
 
 })();
+
