@@ -6,8 +6,8 @@
     .config(config)
     .run(run);
 
-  config.$inject = ['$routeProvider', '$locationProvider', 'ChartJsProvider'];
-  function config($routeProvider, $locationProvider, ChartJsProvider) {
+  config.$inject = ['$routeProvider', '$locationProvider', 'ChartJsProvider', '$interpolateProvider'];
+  function config($routeProvider, $locationProvider, ChartJsProvider, $interpolateProvider) {
     $routeProvider
 
       .when('/login', {
@@ -31,6 +31,9 @@
       responsive: true,
       showLines: true,
     });
+
+		$interpolateProvider.startSymbol('{|');
+		$interpolateProvider.endSymbol('|}');
 
   }// end conf
 
