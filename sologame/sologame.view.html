@@ -1,13 +1,15 @@
 ﻿<!-- http://bootsnipp.com/snippets/featured/bootstrap-square-buttons -->
 <div class="col-lg-12">
 
-	<h2>Apprendre a compter</h2>
+	<h2>Apprendre a {|vm.title.id|}</h2>
 
 
 	<div class="panel panel-default">
 		<div class="panel-heading"><h4>Question:</h4><h5>{|vm.game.question|}</h5></div>
 		<div class="panel-body">
 			<img ng-src="{|vm.game.url_image|}">
+			<hr>
+			<h4>{|vm.game.text|}</h4>
 		</div>
 	</div>
 

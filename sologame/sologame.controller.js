@@ -27,12 +27,14 @@
     vm.repondre  = repondre;
     vm.new  = newq;
 
+		vm.title = gameOption
+
     // init the ctrl
    initCtrl();
 
     function initCtrl(){
 			newGame = {
-				"calcul" : [
+				"compter" : [
 					{
 						"url_image": "http://res.cloudinary.com/bdf/image/upload/v1422979850/umyosv2hpo4v6cxdcvvm.jpg",
 						"response": 7,
@@ -71,7 +73,30 @@
 						"proposition": ["rouge","bleu","verte","orange"],
 						"question": "Combien il y a de ballon ?"
 					}
-				]
+				],
+	"ecrire" : [
+	{
+	  "url_image": "http://localhost:8080/img/ecrire1.jpg",
+	  "response": "boit",
+	  "proposition": ["boit","mange","joue","dessine"],
+	  "question": "Observe l’image et complète la phrase.",
+		"text": "test"
+	}
+	,{
+	  "url_image": "http://localhost:8080/img/ecrire2.jpg",
+	  "response": "brosse les dents",
+	  "proposition": ["coiffe les cheveux","cache les yeux","brosse les dents"],
+	  "question": "Observe l’image et complète la phrase.",
+		"text": "test"
+	},
+	{
+	  "url_image": "http://localhost:8080/img/ecrire3.jpg",
+	  "response": "peigne",
+	  "proposition": ["cache","plaint","peigne","perd"],
+	  "question": "Observe l’image et complète la phrase.",
+		"text": "test"
+	}
+	]
 			}
 			var rand = newGame[gameOption['id']][Math.floor(Math.random() * newGame[gameOption['id']].length)];
 
