@@ -1,16 +1,22 @@
 {
 	"calcul" : [
 	{
-	  "url_image": "url",
-	  "response": 5,
-	  "proposition": [1,2,3,5],
-	  "question": "Combien ?"
+	  "url_image": "http://res.cloudinary.com/bdf/image/upload/v1422979850/umyosv2hpo4v6cxdcvvm.jpg",
+	  "response": 7,
+	  "proposition": [5,4,7,8],
+	  "question": "Combien il y a de dinosaures ?"
 	}
 	,{
-	  "url_image": "url",
+	  "url_image": "http://res.cloudinary.com/bdf/image/upload/c_fill,h_150,w_260/v1422979850/a7twsbalqszfdqnctw3f.jpg",
 	  "response": 5,
-	  "proposition": [1,2,3,5],
-	  "question": "Combien ?"
+	  "proposition": [7,2,3,5],
+	  "question": "Combien il y a d'ours en peluche ?"
+	},
+	{
+	  "url_image": "http://res.cloudinary.com/bdf/image/upload/v1422979850/un9dzblveitmenzb4da0.jpg",
+	  "response": 6,
+	  "proposition": [7,6,3,5],
+	  "question": "Combien il y a de ballon ?"
 	}
 	]
 }
