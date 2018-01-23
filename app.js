@@ -21,23 +21,6 @@
         controllerAs: 'vm'
       })
 
-      .when('/register', {
-        controller: 'RegisterController',
-        templateUrl: 'register/register.view.html',
-        controllerAs: 'vm'
-      })
-
-      .when('/playsolo', {
-        controller: 'SoloGameController',
-        templateUrl: 'sologame/sologame.view.html',
-        controllerAs: 'vm'
-      })
-
-      .when('/multi', {
-        controller: 'MultiController',
-        templateUrl: 'multi/multi.view.html',
-        controllerAs: 'vm'
-      })
 
       .otherwise({ redirectTo: '/login' });
 
@@ -67,9 +50,9 @@
       // redirect to login page if not logged in and trying to access a restricted page
       var restrictedPage = ['/login', '/register'].indexOf( $location.path() ) === -1;
       var loggedIn = $rootScope.globals.currentUser;
-      if (restrictedPage && !loggedIn) {
-        $location.path('/login');
-      }
+      // if (restrictedPage && !loggedIn) {
+        // $location.path('/login');
+      // }
     });
 
   } //end run
